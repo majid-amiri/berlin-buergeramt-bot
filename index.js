@@ -33,7 +33,7 @@ async function checkForAppointments() {
   if (slots.length > 0) {
     let message = `Buergeramt appointments are available now!\n`;
     slots.forEach((slot) => {
-      message += `${slot.date.toLocaleDateString()}: ${slot.url}\n`;
+      message += `📅 [${slot.date}](${slot.url})\n`;
     });
     await sendTelegramNotification(message);
   }

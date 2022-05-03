@@ -8,6 +8,7 @@ async function sendTelegramNotification(message) {
     chat_id: chatId,
     text: message,
     disable_web_page_preview: true,
+    parse_mode: "Markdown",
   };
 
   await got(`https://api.telegram.org/bot${token}/sendMessage`, {
