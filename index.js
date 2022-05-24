@@ -25,10 +25,9 @@ const job = new SimpleIntervalJob(
 scheduler.addSimpleIntervalJob(job);
 
 async function checkForAppointments() {
-  console.log("=== Checking ===", new Date());
   let bookingPageHtml = await getBookingPageHtml();
   const slots = getAvailableAppointments(bookingPageHtml);
-  console.log("Slots: ", slots);
+  console.log(`*** Checking ${new Date()} *** `, slots);
 
   if (slots.length > 0) {
     let message = `Buergeramt appointments are available now!\n`;
